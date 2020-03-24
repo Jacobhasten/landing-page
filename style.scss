@@ -1,0 +1,524 @@
+// variables
+
+$purple-color: #ab00ff;
+$gradient-color: linear-gradient(229.93deg, #ab00ff -21.91%, #007bff 133.89%);
+
+$section-bottom-spacing: 7em;
+$header-bottom-spacing: 3em;
+$primary-text-color: #393939;
+$mobile-section-width: 90%;
+$box-shadow-primary: 1px 1px 15px rgba(0, 0, 0, 0.15);
+$font-body: "Futura Book";
+$font-heading: "Futura Heavy";
+$desktop-font-size: .9em;
+
+// fonts
+
+@font-face {
+  font-family: "Futura Book";
+  src: url(./fonts/futura-book.ttf);
+}
+
+@font-face {
+  font-family: "Futura Heavy";
+  src: url(./fonts/futura-heavy.ttf);
+}
+
+// Base Styles
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+h1 {
+  font-family: "Futura Heavy";
+  font-size: 1.8em;
+}
+
+p {
+  font-family: "Futura Book";
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+// img {
+//     width: 100%;
+// }
+
+// layout
+
+.nav-container,
+.hero-container {
+  display: flex;
+  justify-content: center;
+}
+
+.features__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5em;
+  &-rows {
+    border-radius: 7px;
+    max-width: 21em;
+    height: 7em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    margin: 0.5em;
+    box-shadow: $box-shadow-primary;
+    background: #ffffff;
+  }
+  &-dashboard-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15em;
+  }
+}
+
+.integrations__container {
+  width: 90%;
+  &-heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &-logos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "s t"
+      "g j"
+      "a a"
+      ". .";
+    &__slack {
+      grid-area: s;
+    }
+    &__trello {
+      grid-area: t;
+      justify-self: right;
+    }
+    &__google {
+      grid-area: g;
+    }
+    &__jira {
+      grid-area: j;
+      justify-self: right;
+    }
+    &__asana {
+      grid-area: a;
+      justify-self: center;
+    }
+  }
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: $gradient-color;
+}
+
+// Block Elements
+.page-container {
+  max-width: 100%;
+}
+.background-img {
+  position: absolute;
+  top: 16em;
+  z-index: -2;
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav {
+  margin-top: 3em;
+  margin-bottom: $section-bottom-spacing;
+  // margin-left: 1em;
+  width: $mobile-section-width;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  &__zenith-logo {
+    width: 9em;
+  }
+
+  &__hamburger-menu {
+    &__top {
+      width: 2em;
+      border-top: 2px solid $purple-color;
+    }
+
+    &__bottom {
+      position: relative;
+      top: 0.5em;
+      left: 0.3em;
+      width: 1.7em;
+      border-top: 2px solid $purple-color;
+    }
+  }
+}
+
+.hero {
+  width: $mobile-section-width;
+  margin-bottom: 22em;
+  &__heading {
+    color: $primary-text-color;
+    width: 50%;
+    margin-bottom: $header-bottom-spacing;
+  }
+  &__inbound-card {
+    width: 100%;
+    box-shadow: $box-shadow-primary;
+  }
+}
+
+.features {
+  &__dashboard-img {
+    width: $mobile-section-width;
+  }
+  &__heading {
+    text-align: center;
+    background: -webkit-linear-gradient(229.93deg, #ab00ff -21.91%, #007bff 133.89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: $header-bottom-spacing;
+  }
+  &__cards {
+    &__body {
+      width: 80%;
+    }
+    &__img {
+      width: 1em;
+    }
+  }
+  &__dashboard-img {
+    width: 90%;
+    height: auto;
+    box-shadow: $box-shadow-primary;
+    border-radius: 0.5em;
+  }
+}
+
+.integrations {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__heading {
+    width: 11em;
+    background: -webkit-linear-gradient(229.93deg, #ab00ff -21.91%, #007bff 133.89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: $header-bottom-spacing;
+  }
+
+  &__logo-img {
+    width: 7em;
+  }
+}
+
+.footer {
+  &__background-img {
+    position: absolute;
+    z-index: 1;
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__heading {
+    text-align: center;
+    color: white;
+    padding: 2em;
+    z-index: 3;
+  }
+
+  &__form {
+    width: $mobile-section-width;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10em;
+    &__items {
+      width: 18em;
+      font-family: $font-heading;
+      font-size: 0.7em;
+      padding-left: 2em;
+      color: rgb(255, 255, 255, 0.5);
+      background-color: rgb(255, 255, 255, 0.4);
+      mix-blend-mode: normal;
+      border-radius: 2em;
+      border: none;
+      z-index: 2;
+    }
+    &__items::placeholder {
+      color: white;
+      opacity: 0.5;
+    }
+
+    &__button,
+     &__button-desktop {
+      display: block;
+      font-family: $font-heading;
+      font-size: 0.7em;
+      background-image: -webkit-linear-gradient(229.93deg, #ab00ff -21.91%, #007bff 133.89%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 1em;
+      text-align: center;
+      width: 10em;
+      z-index: 2;
+
+      &-background,
+      &-background-desktop {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 2em;
+        z-index: 2;
+      }
+    }
+  }
+  &__footing {
+    width: $mobile-section-width;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-bottom: 2em;
+    &__items {
+      text-align: right;
+      font-family: $font-heading;
+      color: white;
+      font-size: 0.7em;
+      width: 90%;
+      z-index: 2;
+      padding-bottom: 1em;
+    }
+  }
+}
+
+// Items to block in mobile
+
+.nav__list,
+.background-img-cards,
+.footer__form__name,
+.footer__form__select,
+.footer__form__button-background-desktop {
+  display: none;
+}
+
+// media-queiries
+
+@media (min-width: 600px) {
+  .background-img,
+  .background-img-cards {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0em;
+  }
+
+  .background-img-cards {
+    z-index: -1;
+  }
+
+  .nav {
+    &__hamburger-menu {
+      display: none;
+    }
+
+    &__list {
+      display: block;
+      width: 60%;
+      font-family: $font-heading;
+      font-size: .7em;
+      display: flex;
+      justify-content: flex-end;
+
+      &__items {
+        margin-right: 2em;
+      }
+    }
+
+    &__button {
+      color: white;
+      font-family: $font-heading;
+      font-size: .7em;
+      background-image: linear-gradient(229.93deg, #ab00ff -21.91%, #007bff 133.89%);
+      padding: 1em;
+      text-align: center;
+      padding: 1em 3em 1em 3em;
+      border-radius: 2em;
+      // color: white;
+    }
+  }
+
+  .hero {
+    &__heading {
+      width: 13em;
+    }
+
+    &__inbound-card {
+      max-width: 50em;
+      &__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .footer {
+    &__form {
+      display: flex;
+      justify-content: space-around;
+    }
+    &__background-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+
+  .background-img,
+  .background-img-cards {
+    top: 10em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+.nav__list, .nav__button {
+  font-size: $desktop-font-size;
+}
+  .hero {
+    margin-bottom: 15em;
+  }
+
+  .features {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__container {
+      width: 90%;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  .integrations__container-logos {
+    width: 100%;
+    display: grid;
+    padding-bottom: 8em;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "s t a j g";
+    &__slack {
+      grid-area: s;
+      justify-self: center;
+      align-self: center;
+    }
+    &__trello {
+      grid-area: t;
+      justify-self: center;
+      align-self: center;
+    }
+    &__google {
+      grid-area: g;
+      justify-self: center;
+      align-self: center;
+    }
+    &__jira {
+      grid-area: j;
+      justify-self: center;
+      align-self: center;
+    }
+    &__asana {
+      grid-area: a;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  .footer {
+
+    &__footing {
+      padding-bottom: 10em;
+      &__items {
+        font-size: $desktop-font-size;
+      }
+    }
+    &__form {
+      justify-items: center;
+      align-items: center;
+      flex-direction: column;
+      
+      &__items {
+        width: 30em;
+        font-size: $desktop-font-size;
+        padding: 1em 0em 1em 2em;
+        margin-bottom: 1em;
+      }
+      &__name {
+        display: block;
+      }
+
+      &__select {
+        display: block;
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 1em 0em 1em 2em;
+        margin-bottom: 2em;
+      
+        &-wrapper {
+          position: relative;
+        }
+        &-wrapper:after {
+        content: '▼';
+        font-family: $font-heading;
+        font-size: .7em;
+        position: absolute;
+        pointer-events: none;
+        bottom: 4em;
+        right: 2em;
+        z-index: 3;
+        color: white;
+        }
+    }
+
+    &__button-background {
+      display: none;
+    }
+
+    &__button-background-desktop {
+      display: block;
+    }
+
+    &__button-desktop {
+      font-size: $desktop-font-size;
+    }
+
+    }
+
+  }
+}
